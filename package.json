@@ -1,0 +1,46 @@
+{
+  "name": "claude-token-status",
+  "displayName": "Claude Token Status",
+  "description": "Shows Claude Code context window usage in the VSCode status bar",
+  "version": "0.0.1",
+  "publisher": "your-publisher-id",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeTokenStatus.refresh",
+        "title": "Claude Token Status: Refresh"
+      }
+    ],
+    "configuration": {
+      "title": "Claude Token Status",
+      "properties": {
+        "claudeTokenStatus.contextWindowSize": {
+          "type": "number",
+          "default": 200000,
+          "description": "Fallback context window token limit used when the model cannot be detected from the session file."
+        },
+        "claudeTokenStatus.refreshInterval": {
+          "type": "number",
+          "default": 10,
+          "description": "Polling interval in seconds. Changes take effect immediately."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}
