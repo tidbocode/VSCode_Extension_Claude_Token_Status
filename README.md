@@ -1,5 +1,5 @@
+![image](https://github.com/tidbocode/VSCode_Extension_Claude_Token_Status/blob/main/ClaudeTokenStatus.png)
 # Claude Token Status
-
 A VS Code extension that shows your [Claude Code](https://claude.ai/code) context window usage in the status bar — so you always know how close you are to the token limit.
 
 ## Features
