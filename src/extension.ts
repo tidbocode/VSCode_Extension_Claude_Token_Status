@@ -65,7 +65,7 @@ function updateStatusBar(statusBar: vscode.StatusBarItem): void {
   const usage = getLatestTokenUsage();
 
   if (!usage) {
-    statusBar.text = '$(chip)$(sparkle) Claude: --';
+    statusBar.text = '$(sparkle) Claude: --';
     statusBar.tooltip = 'No Claude Code session found';
     statusBar.backgroundColor = undefined;
     return;
@@ -77,7 +77,7 @@ function updateStatusBar(statusBar: vscode.StatusBarItem): void {
   const pct = (contextUsed / windowSize) * 100;
   const modelLabel = usage.model ?? 'unknown model';
 
-  statusBar.text = `$(chip)$(sparkle) ${fmt(contextUsed)} / ${fmt(windowSize)}`;
+  statusBar.text = `$(sparkle) ${fmt(contextUsed)} / ${fmt(windowSize)}`;
   statusBar.tooltip = buildTooltip(usage, contextUsed, windowSize, pct, modelLabel);
 
   if (pct >= 90) {

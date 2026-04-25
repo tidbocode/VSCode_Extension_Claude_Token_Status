@@ -3,7 +3,12 @@
   "displayName": "Claude Token Status",
   "description": "Shows Claude Code context window usage in the VSCode status bar",
   "version": "0.0.1",
-  "publisher": "your-publisher-id",
+  "publisher": "keithtidwell",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keithtidwell/VSCode_Extension_Claude_Token_Status"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -35,8 +40,10 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./",
+    "package": "npx @vscode/vsce package",
+    "publish": "npx @vscode/vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",
